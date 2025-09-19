@@ -1,0 +1,189 @@
+2025-09-19 18:37:25,476 - mc_translator - INFO - run.py:29 - ============================================================
+2025-09-19 18:37:27,086 - mc_translator - INFO - main.py:17 - 应用目录结构初始化完成
+2025-09-19 18:37:27,087 - mc_translator - INFO - main.py:24 - FastAPI应用创建完成: 我的世界模组翻译器
+2025-09-19 18:37:27,417 - mc_translator - INFO - main.py:31 - 翻译器初始化完成，模型: gpt-4o-mini
+2025-09-19 18:37:27,417 - mc_translator - INFO - main.py:35 - 模板引擎初始化完成，目录: templates
+2025-09-19 18:37:27,418 - mc_translator - INFO - local_knowledge_base.py:28 - 知识库目录初始化完成: knowledge_bases
+2025-09-19 18:37:27,468 - mc_translator - INFO - local_knowledge_base.py:36 - 嵌入模型初始化完成: text-embedding-3-small
+2025-09-19 18:37:27,470 - mc_translator - INFO - main.py:45 - 知识库管理器初始化完成，存储目录: knowledge_bases
+2025-09-19 18:37:33,934 - mc_translator - INFO - main.py:55 - 主页访问 - IP: 127.0.0.1
+2025-09-19 18:37:34,294 - mc_translator - INFO - main.py:70 - 获取知识库列表成功，共 1 个知识库
+2025-09-19 18:37:39,812 - mc_translator - INFO - main.py:194 - 开始翻译文件: en_us.json, 使用知识库: 5645f268-2aec-4aa6-89f8-29c62b70ec95
+2025-09-19 18:37:39,813 - mc_translator - INFO - main.py:207 - 翻译文件解析成功，包含 610 个条目
+2025-09-19 18:37:39,813 - mc_translator - INFO - main.py:210 - 开始AI翻译...
+2025-09-19 18:45:55,637 - mc_translator - INFO - main.py:17 - 应用目录结构初始化完成
+2025-09-19 18:45:55,639 - mc_translator - INFO - main.py:24 - FastAPI应用创建完成: 我的世界模组翻译器
+2025-09-19 18:45:55,918 - mc_translator - INFO - main.py:31 - 翻译器初始化完成，模型: gpt-4o-mini
+2025-09-19 18:45:55,919 - mc_translator - INFO - main.py:35 - 模板引擎初始化完成，目录: templates
+2025-09-19 18:45:55,919 - mc_translator - INFO - local_knowledge_base.py:28 - 知识库目录初始化完成: knowledge_bases
+2025-09-19 18:45:55,937 - mc_translator - INFO - local_knowledge_base.py:36 - 嵌入模型初始化完成: text-embedding-3-small
+2025-09-19 18:45:55,938 - mc_translator - INFO - main.py:45 - 知识库管理器初始化完成，存储目录: knowledge_bases
+2025-09-19 18:45:55,968 - mc_translator - INFO - run.py:29 - ============================================================
+2025-09-19 18:45:58,140 - mc_translator - INFO - main.py:17 - 应用目录结构初始化完成
+2025-09-19 18:45:58,140 - mc_translator - INFO - main.py:24 - FastAPI应用创建完成: 我的世界模组翻译器
+2025-09-19 18:45:58,449 - mc_translator - INFO - main.py:31 - 翻译器初始化完成，模型: gpt-4o-mini
+2025-09-19 18:45:58,450 - mc_translator - INFO - main.py:35 - 模板引擎初始化完成，目录: templates
+2025-09-19 18:45:58,451 - mc_translator - INFO - local_knowledge_base.py:28 - 知识库目录初始化完成: knowledge_bases
+2025-09-19 18:45:58,469 - mc_translator - INFO - local_knowledge_base.py:36 - 嵌入模型初始化完成: text-embedding-3-small
+2025-09-19 18:45:58,470 - mc_translator - INFO - main.py:45 - 知识库管理器初始化完成，存储目录: knowledge_bases
+2025-09-19 18:45:58,523 - mc_translator - INFO - main.py:17 - 应用目录结构初始化完成
+2025-09-19 18:45:58,523 - mc_translator - INFO - main.py:24 - FastAPI应用创建完成: 我的世界模组翻译器
+2025-09-19 18:45:58,526 - mc_translator - INFO - main.py:31 - 翻译器初始化完成，模型: gpt-4o-mini
+2025-09-19 18:45:58,526 - mc_translator - INFO - main.py:35 - 模板引擎初始化完成，目录: templates
+2025-09-19 18:45:58,527 - mc_translator - INFO - local_knowledge_base.py:28 - 知识库目录初始化完成: knowledge_bases
+2025-09-19 18:45:58,550 - mc_translator - INFO - local_knowledge_base.py:36 - 嵌入模型初始化完成: text-embedding-3-small
+2025-09-19 18:45:58,551 - mc_translator - INFO - main.py:45 - 知识库管理器初始化完成，存储目录: knowledge_bases
+2025-09-19 18:46:00,901 - mc_translator - INFO - main.py:194 - 开始翻译文件: en_us.json, 使用知识库: 5645f268-2aec-4aa6-89f8-29c62b70ec95
+2025-09-19 18:46:00,902 - mc_translator - INFO - main.py:207 - 翻译文件解析成功，包含 610 个条目
+2025-09-19 18:46:00,902 - mc_translator - INFO - main.py:210 - 开始AI翻译...
+2025-09-19 18:48:37,029 - mc_translator - INFO - main.py:17 - 应用目录结构初始化完成
+2025-09-19 18:48:37,030 - mc_translator - INFO - main.py:24 - FastAPI应用创建完成: 我的世界模组翻译器
+2025-09-19 18:48:37,313 - mc_translator - INFO - main.py:31 - 翻译器初始化完成，模型: gpt-4o-mini
+2025-09-19 18:48:37,314 - mc_translator - INFO - main.py:35 - 模板引擎初始化完成，目录: templates
+2025-09-19 18:48:37,316 - mc_translator - INFO - local_knowledge_base.py:28 - 知识库目录初始化完成: knowledge_bases
+2025-09-19 18:48:37,332 - mc_translator - INFO - local_knowledge_base.py:36 - 嵌入模型初始化完成: text-embedding-3-small
+2025-09-19 18:48:37,333 - mc_translator - INFO - main.py:45 - 知识库管理器初始化完成，存储目录: knowledge_bases
+2025-09-19 18:48:37,362 - mc_translator - INFO - run.py:29 - ============================================================
+2025-09-19 18:48:39,619 - mc_translator - INFO - main.py:17 - 应用目录结构初始化完成
+2025-09-19 18:48:39,621 - mc_translator - INFO - main.py:24 - FastAPI应用创建完成: 我的世界模组翻译器
+2025-09-19 18:48:39,934 - mc_translator - INFO - main.py:31 - 翻译器初始化完成，模型: gpt-4o-mini
+2025-09-19 18:48:39,935 - mc_translator - INFO - main.py:35 - 模板引擎初始化完成，目录: templates
+2025-09-19 18:48:39,935 - mc_translator - INFO - local_knowledge_base.py:28 - 知识库目录初始化完成: knowledge_bases
+2025-09-19 18:48:39,956 - mc_translator - INFO - local_knowledge_base.py:36 - 嵌入模型初始化完成: text-embedding-3-small
+2025-09-19 18:48:39,957 - mc_translator - INFO - main.py:45 - 知识库管理器初始化完成，存储目录: knowledge_bases
+2025-09-19 18:48:40,010 - mc_translator - INFO - main.py:17 - 应用目录结构初始化完成
+2025-09-19 18:48:40,011 - mc_translator - INFO - main.py:24 - FastAPI应用创建完成: 我的世界模组翻译器
+2025-09-19 18:48:40,013 - mc_translator - INFO - main.py:31 - 翻译器初始化完成，模型: gpt-4o-mini
+2025-09-19 18:48:40,013 - mc_translator - INFO - main.py:35 - 模板引擎初始化完成，目录: templates
+2025-09-19 18:48:40,013 - mc_translator - INFO - local_knowledge_base.py:28 - 知识库目录初始化完成: knowledge_bases
+2025-09-19 18:48:40,031 - mc_translator - INFO - local_knowledge_base.py:36 - 嵌入模型初始化完成: text-embedding-3-small
+2025-09-19 18:48:40,031 - mc_translator - INFO - main.py:45 - 知识库管理器初始化完成，存储目录: knowledge_bases
+2025-09-19 18:48:43,194 - mc_translator - INFO - main.py:194 - 开始翻译文件: en_us.json, 使用知识库: 5645f268-2aec-4aa6-89f8-29c62b70ec95
+2025-09-19 18:48:43,194 - mc_translator - INFO - main.py:207 - 翻译文件解析成功，包含 610 个条目
+2025-09-19 18:48:43,196 - mc_translator - INFO - main.py:210 - 开始AI翻译...
+2025-09-19 18:49:16,813 - mc_translator - INFO - main.py:17 - 应用目录结构初始化完成
+2025-09-19 18:49:16,814 - mc_translator - INFO - main.py:24 - FastAPI应用创建完成: 我的世界模组翻译器
+2025-09-19 18:49:17,099 - mc_translator - INFO - main.py:31 - 翻译器初始化完成，模型: gpt-4o-mini
+2025-09-19 18:49:17,099 - mc_translator - INFO - main.py:35 - 模板引擎初始化完成，目录: templates
+2025-09-19 18:49:17,101 - mc_translator - INFO - local_knowledge_base.py:29 - 知识库目录初始化完成: knowledge_bases
+2025-09-19 18:49:17,117 - mc_translator - INFO - local_knowledge_base.py:37 - 嵌入模型初始化完成: text-embedding-3-small
+2025-09-19 18:49:17,118 - mc_translator - INFO - main.py:45 - 知识库管理器初始化完成，存储目录: knowledge_bases
+2025-09-19 18:49:17,147 - mc_translator - INFO - run.py:29 - ============================================================
+2025-09-19 18:49:19,278 - mc_translator - INFO - main.py:17 - 应用目录结构初始化完成
+2025-09-19 18:49:19,279 - mc_translator - INFO - main.py:24 - FastAPI应用创建完成: 我的世界模组翻译器
+2025-09-19 18:49:19,586 - mc_translator - INFO - main.py:31 - 翻译器初始化完成，模型: gpt-4o-mini
+2025-09-19 18:49:19,586 - mc_translator - INFO - main.py:35 - 模板引擎初始化完成，目录: templates
+2025-09-19 18:49:19,588 - mc_translator - INFO - local_knowledge_base.py:29 - 知识库目录初始化完成: knowledge_bases
+2025-09-19 18:49:19,605 - mc_translator - INFO - local_knowledge_base.py:37 - 嵌入模型初始化完成: text-embedding-3-small
+2025-09-19 18:49:19,606 - mc_translator - INFO - main.py:45 - 知识库管理器初始化完成，存储目录: knowledge_bases
+2025-09-19 18:49:19,652 - mc_translator - INFO - main.py:17 - 应用目录结构初始化完成
+2025-09-19 18:49:19,652 - mc_translator - INFO - main.py:24 - FastAPI应用创建完成: 我的世界模组翻译器
+2025-09-19 18:49:19,653 - mc_translator - INFO - main.py:31 - 翻译器初始化完成，模型: gpt-4o-mini
+2025-09-19 18:49:19,654 - mc_translator - INFO - main.py:35 - 模板引擎初始化完成，目录: templates
+2025-09-19 18:49:19,655 - mc_translator - INFO - local_knowledge_base.py:29 - 知识库目录初始化完成: knowledge_bases
+2025-09-19 18:49:19,671 - mc_translator - INFO - local_knowledge_base.py:37 - 嵌入模型初始化完成: text-embedding-3-small
+2025-09-19 18:49:19,672 - mc_translator - INFO - main.py:45 - 知识库管理器初始化完成，存储目录: knowledge_bases
+2025-09-19 18:49:22,071 - mc_translator - INFO - main.py:194 - 开始翻译文件: en_us.json, 使用知识库: 5645f268-2aec-4aa6-89f8-29c62b70ec95
+2025-09-19 18:49:22,072 - mc_translator - INFO - main.py:207 - 翻译文件解析成功，包含 610 个条目
+2025-09-19 18:49:22,072 - mc_translator - INFO - main.py:210 - 开始AI翻译...
+2025-09-19 18:51:05,867 - mc_translator - INFO - run.py:29 - ============================================================
+2025-09-19 18:51:08,054 - mc_translator - INFO - main.py:17 - 应用目录结构初始化完成
+2025-09-19 18:51:08,055 - mc_translator - INFO - main.py:24 - FastAPI应用创建完成: 我的世界模组翻译器
+2025-09-19 18:51:08,337 - mc_translator - INFO - main.py:31 - 翻译器初始化完成，模型: gpt-4o-mini
+2025-09-19 18:51:08,338 - mc_translator - INFO - main.py:35 - 模板引擎初始化完成，目录: templates
+2025-09-19 18:51:08,339 - mc_translator - INFO - local_knowledge_base.py:29 - 知识库目录初始化完成: knowledge_bases
+2025-09-19 18:51:08,356 - mc_translator - INFO - local_knowledge_base.py:37 - 嵌入模型初始化完成: text-embedding-3-small
+2025-09-19 18:51:08,357 - mc_translator - INFO - main.py:45 - 知识库管理器初始化完成，存储目录: knowledge_bases
+2025-09-19 18:51:27,332 - mc_translator - INFO - main.py:194 - 开始翻译文件: en_us.json, 使用知识库: 5645f268-2aec-4aa6-89f8-29c62b70ec95
+2025-09-19 18:51:27,333 - mc_translator - INFO - main.py:207 - 翻译文件解析成功，包含 610 个条目
+2025-09-19 18:51:27,333 - mc_translator - INFO - main.py:210 - 开始AI翻译...
+2025-09-19 19:02:39,455 - mc_translator - INFO - main.py:216 - AI翻译完成
+2025-09-19 19:02:39,458 - mc_translator - INFO - main.py:226 - 翻译文件保存成功: translated_f850c5d7-178c-4d29-8e02-0a4b4b680a6d.json
+2025-09-19 19:02:39,458 - mc_translator - INFO - main.py:234 - 翻译任务完成: en_us.json -> translated_f850c5d7-178c-4d29-8e02-0a4b4b680a6d.json
+2025-09-19 19:45:37,477 - mc_translator - INFO - main.py:247 - 文件下载请求: translated_f850c5d7-178c-4d29-8e02-0a4b4b680a6d.json
+2025-09-19 19:45:37,478 - mc_translator - INFO - main.py:255 - 开始下载文件: translated_f850c5d7-178c-4d29-8e02-0a4b4b680a6d.json
+2025-09-19 19:47:42,935 - mc_translator - INFO - main.py:62 - 知识库管理页面访问 - IP: 127.0.0.1
+2025-09-19 19:47:43,284 - mc_translator - INFO - main.py:70 - 获取知识库列表成功，共 1 个知识库
+2025-09-19 19:48:19,571 - mc_translator - INFO - main.py:83 - 开始创建知识库: 灾变, 文件: zh_cn.json
+2025-09-19 19:48:19,572 - mc_translator - INFO - main.py:113 - 文件编码解析成功，使用编码: utf-8-sig
+2025-09-19 19:48:19,574 - mc_translator - INFO - main.py:123 - JSON解析成功
+2025-09-19 19:48:19,574 - mc_translator - INFO - main.py:143 - JSON数据验证通过，包含 669 个条目
+2025-09-19 19:48:19,574 - mc_translator - INFO - main.py:146 - 开始创建向量知识库...
+2025-09-19 19:48:19,574 - mc_translator - INFO - local_knowledge_base.py:62 - 开始创建知识库: 灾变
+2025-09-19 19:48:19,576 - mc_translator - INFO - local_knowledge_base.py:78 - 开始处理 669 个JSON条目
+2025-09-19 19:48:19,578 - mc_translator - INFO - local_knowledge_base.py:95 - 创建了 669 个文档对象
+2025-09-19 19:48:19,590 - mc_translator - INFO - local_knowledge_base.py:103 - 文档分割完成，共 669 个片段
+2025-09-19 19:48:19,590 - mc_translator - INFO - local_knowledge_base.py:107 - 开始创建向量数据库: knowledge_bases\qdrant_local\ff0130df-aec8-4181-b400-ff4ef9a5550c
+2025-09-19 19:50:00,039 - mc_translator - INFO - local_knowledge_base.py:115 - 向量数据库创建完成
+2025-09-19 19:50:00,042 - mc_translator - INFO - local_knowledge_base.py:135 - 知识库 '灾变' 创建完成，ID: ff0130df-aec8-4181-b400-ff4ef9a5550c, 路径: knowledge_bases\qdrant_local\ff0130df-aec8-4181-b400-ff4ef9a5550c
+2025-09-19 19:50:00,044 - mc_translator - INFO - main.py:148 - 知识库创建成功，ID: ff0130df-aec8-4181-b400-ff4ef9a5550c
+2025-09-19 19:50:00,045 - mc_translator - INFO - main.py:156 - 知识库 '灾变' 创建完成，返回结果
+2025-09-19 19:50:00,050 - mc_translator - INFO - main.py:70 - 获取知识库列表成功，共 2 个知识库
+2025-09-19 19:52:45,467 - mc_translator - INFO - main.py:17 - 应用目录结构初始化完成
+2025-09-19 19:52:45,468 - mc_translator - INFO - main.py:24 - FastAPI应用创建完成: 我的世界模组翻译器
+2025-09-19 19:52:45,761 - mc_translator - INFO - main.py:31 - 翻译器初始化完成，模型: gpt-4o-mini
+2025-09-19 19:52:45,761 - mc_translator - INFO - main.py:35 - 模板引擎初始化完成，目录: templates
+2025-09-19 19:52:45,763 - mc_translator - INFO - local_knowledge_base.py:29 - 知识库目录初始化完成: knowledge_bases
+2025-09-19 19:52:45,779 - mc_translator - INFO - local_knowledge_base.py:37 - 嵌入模型初始化完成: text-embedding-3-small
+2025-09-19 19:52:45,780 - mc_translator - INFO - main.py:45 - 知识库管理器初始化完成，存储目录: knowledge_bases
+2025-09-19 19:52:58,181 - mc_translator - INFO - main.py:194 - 开始翻译文件: en_us.json, 使用知识库: ff0130df-aec8-4181-b400-ff4ef9a5550c
+2025-09-19 19:52:58,182 - mc_translator - INFO - main.py:207 - 翻译文件解析成功，包含 84 个条目
+2025-09-19 19:52:58,182 - mc_translator - INFO - main.py:210 - 开始AI翻译...
+2025-09-19 19:53:59,365 - mc_translator - ERROR - main.py:241 - 翻译过程中发生错误: 500: 翻译失败: name 'logger' is not defined
+Traceback (most recent call last):
+  File "d:\PyCharm\py_project\llm\mc_translator\translator.py", line 63, in translate_json
+    logger.info(f"找到{len(ref_examples)}条相关数据")
+NameError: name 'logger' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\PyCharm\py_project\llm\mc_translator\main.py", line 211, in translate_file
+    translated_data = translator.translate_json(
+  File "d:\PyCharm\py_project\llm\mc_translator\translator.py", line 77, in translate_json
+    raise HTTPException(status_code=500, detail=f"翻译失败: {error}")
+fastapi.exceptions.HTTPException: 500: 翻译失败: name 'logger' is not defined
+2025-09-19 19:54:23,956 - mc_translator - INFO - main.py:17 - 应用目录结构初始化完成
+2025-09-19 19:54:23,958 - mc_translator - INFO - main.py:24 - FastAPI应用创建完成: 我的世界模组翻译器
+2025-09-19 19:54:24,234 - mc_translator - INFO - main.py:31 - 翻译器初始化完成，模型: gpt-4o-mini
+2025-09-19 19:54:24,234 - mc_translator - INFO - main.py:35 - 模板引擎初始化完成，目录: templates
+2025-09-19 19:54:24,236 - mc_translator - INFO - local_knowledge_base.py:29 - 知识库目录初始化完成: knowledge_bases
+2025-09-19 19:54:24,252 - mc_translator - INFO - local_knowledge_base.py:37 - 嵌入模型初始化完成: text-embedding-3-small
+2025-09-19 19:54:24,253 - mc_translator - INFO - main.py:45 - 知识库管理器初始化完成，存储目录: knowledge_bases
+2025-09-19 19:54:28,916 - mc_translator - INFO - main.py:194 - 开始翻译文件: en_us.json, 使用知识库: ff0130df-aec8-4181-b400-ff4ef9a5550c
+2025-09-19 19:54:28,917 - mc_translator - INFO - main.py:207 - 翻译文件解析成功，包含 84 个条目
+2025-09-19 19:54:28,918 - mc_translator - INFO - main.py:210 - 开始AI翻译...
+2025-09-19 19:55:31,728 - mc_translator - INFO - translator.py:64 - 找到13条相关数据
+2025-09-19 19:55:47,998 - mc_translator - INFO - main.py:216 - AI翻译完成
+2025-09-19 19:55:47,999 - mc_translator - INFO - main.py:226 - 翻译文件保存成功: translated_ca55a66f-991b-42b0-9f21-70f5553d0d0b.json
+2025-09-19 19:55:47,999 - mc_translator - INFO - main.py:234 - 翻译任务完成: en_us.json -> translated_ca55a66f-991b-42b0-9f21-70f5553d0d0b.json
+2025-09-19 19:55:51,449 - mc_translator - INFO - main.py:247 - 文件下载请求: translated_ca55a66f-991b-42b0-9f21-70f5553d0d0b.json
+2025-09-19 19:55:51,450 - mc_translator - INFO - main.py:255 - 开始下载文件: translated_ca55a66f-991b-42b0-9f21-70f5553d0d0b.json
+2025-09-19 19:58:45,593 - mc_translator - INFO - main.py:17 - 应用目录结构初始化完成
+2025-09-19 19:58:45,594 - mc_translator - INFO - main.py:24 - FastAPI应用创建完成: 我的世界模组翻译器
+2025-09-19 19:58:45,885 - mc_translator - INFO - main.py:31 - 翻译器初始化完成，模型: gpt-4o-mini
+2025-09-19 19:58:45,887 - mc_translator - INFO - main.py:35 - 模板引擎初始化完成，目录: templates
+2025-09-19 19:58:45,887 - mc_translator - INFO - local_knowledge_base.py:29 - 知识库目录初始化完成: knowledge_bases
+2025-09-19 19:58:45,906 - mc_translator - INFO - local_knowledge_base.py:37 - 嵌入模型初始化完成: text-embedding-3-small
+2025-09-19 19:58:45,907 - mc_translator - INFO - main.py:45 - 知识库管理器初始化完成，存储目录: knowledge_bases
+2025-09-19 19:59:01,459 - mc_translator - INFO - main.py:17 - 应用目录结构初始化完成
+2025-09-19 19:59:01,461 - mc_translator - INFO - main.py:24 - FastAPI应用创建完成: 我的世界模组翻译器
+2025-09-19 19:59:01,748 - mc_translator - INFO - main.py:31 - 翻译器初始化完成，模型: gpt-4o-mini
+2025-09-19 19:59:01,749 - mc_translator - INFO - main.py:35 - 模板引擎初始化完成，目录: templates
+2025-09-19 19:59:01,749 - mc_translator - INFO - local_knowledge_base.py:29 - 知识库目录初始化完成: knowledge_bases
+2025-09-19 19:59:01,768 - mc_translator - INFO - local_knowledge_base.py:37 - 嵌入模型初始化完成: text-embedding-3-small
+2025-09-19 19:59:01,768 - mc_translator - INFO - main.py:45 - 知识库管理器初始化完成，存储目录: knowledge_bases
+2025-09-19 19:59:02,380 - mc_translator - INFO - main.py:194 - 开始翻译文件: en_us.json, 使用知识库: ff0130df-aec8-4181-b400-ff4ef9a5550c
+2025-09-19 19:59:02,381 - mc_translator - INFO - main.py:207 - 翻译文件解析成功，包含 84 个条目
+2025-09-19 19:59:02,381 - mc_translator - INFO - main.py:210 - 开始AI翻译...
+2025-09-19 20:00:17,121 - mc_translator - INFO - translator.py:64 - 找到13条相关数据:["'koboleton_ambient.sub': '骸龙：咔哒'", "'advancements.cataclysm.kill_leviathan.title': '多维捕食者'", "'item.cataclysm.blessed_amethyst_crab_meat': '受祝福的紫水晶蟹肉'", "'item.cataclysm.void_jaw': '虚空之颚'", "'item.cataclysm.void_jaw': '虚空之颚'", "'item.cataclysm.monstrous_horn': '恶兽犄角'", "'entity.cataclysm.cindaria': '水母莉亚'", "'item.cataclysm.blessed_amethyst_crab_meat': '受祝福的紫水晶蟹肉'", "'harbinger_stun.sub': '先驱者：被眩晕'", "'deepling_idle.sub': '渊灵：低鸣'", "'item.cataclysm.gauntlet_of_bulwark.desc2': '如果停止右击，你将向前冲锋并对你前方的实体们造成伤害'", "'abyss_blast.sub': '利维坦：深渊充能'", "'deepling_swing.sub': '渊灵：挥舞武器'"]
+2025-09-19 20:01:03,315 - mc_translator - INFO - main.py:216 - AI翻译完成
+2025-09-19 20:01:03,320 - mc_translator - INFO - main.py:226 - 翻译文件保存成功: translated_7a4c64a2-864a-4e93-8714-21335414bd16.json
+2025-09-19 20:01:03,320 - mc_translator - INFO - main.py:234 - 翻译任务完成: en_us.json -> translated_7a4c64a2-864a-4e93-8714-21335414bd16.json
+2025-09-19 20:02:58,452 - mc_translator - INFO - main.py:17 - 应用目录结构初始化完成
+2025-09-19 20:02:58,453 - mc_translator - INFO - main.py:24 - FastAPI应用创建完成: 我的世界模组翻译器
+2025-09-19 20:02:58,764 - mc_translator - INFO - main.py:31 - 翻译器初始化完成，模型: gpt-4o-mini
+2025-09-19 20:02:58,764 - mc_translator - INFO - main.py:35 - 模板引擎初始化完成，目录: templates
+2025-09-19 20:02:58,765 - mc_translator - INFO - local_knowledge_base.py:29 - 知识库目录初始化完成: knowledge_bases
+2025-09-19 20:02:58,785 - mc_translator - INFO - local_knowledge_base.py:37 - 嵌入模型初始化完成: text-embedding-3-small
+2025-09-19 20:02:58,786 - mc_translator - INFO - main.py:45 - 知识库管理器初始化完成，存储目录: knowledge_bases
