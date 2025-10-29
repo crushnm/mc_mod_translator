@@ -57,7 +57,7 @@ class LocalKnowledgeBase:
         with open(self.metadata_file, 'w', encoding='utf-8') as f:
             json.dump(metadata, f, ensure_ascii=False, indent=2)
     
-    def create_knowledge_base(self, name: str, description: str, json_data: Dict[str, Any]) -> str:
+    def create_knowledge_base(self, name: str, description: str, json_data: Dict[str, Any],classes:List) -> str:
         """创建新的知识库并建立本地向量索引"""
         logger.info(f"开始创建知识库: {name}")
         
@@ -90,7 +90,8 @@ class LocalKnowledgeBase:
                             "type": self._classify_key_type(key)
                         }
                     )
-                    documents.append(doc)
+                    if doc.metadata["type"] in classes:
+                        documents.append(doc)
             
             logger.info(f"创建了 {len(documents)} 个文档对象")
             
@@ -116,8 +117,15 @@ class LocalKnowledgeBase:
             
             # 保存原始JSON文件（备份）
             kb_file = os.path.join(self.kb_dir, f"{kb_id}.json")
+            documents_data = [
+                {
+                    "page_content": doc.page_content,
+                    "metadata": doc.metadata
+                }
+                for doc in documents
+            ]
             with open(kb_file, 'w', encoding='utf-8') as f:
-                json.dump(json_data, f, ensure_ascii=False, indent=2)
+                json.dump(documents_data, f, ensure_ascii=False, indent=2)
             
             # 更新元数据
             metadata[kb_id] = {
@@ -157,7 +165,7 @@ class LocalKnowledgeBase:
                 "name": kb_info.get("name", "未命名"),
                 "description": kb_info.get("description", ""),
                 "created_at": kb_info.get("created_at", ""),
-                "entry_count": kb_info.get("entry_count", 0)
+                "entry_count": kb_info.get("vector_count", 0)
             })
         
         return sorted(result, key=lambda x: x["created_at"], reverse=True)
@@ -176,8 +184,15 @@ class LocalKnowledgeBase:
             return None
         
         try:
+            content = {}
             with open(file_path, 'r', encoding='utf-8') as f:
-                content = json.load(f)
+                documents_data = json.load(f)
+            for doc_data in documents_data:
+                metadata = doc_data.get("metadata", {})
+                key = metadata.get("key")
+                value = metadata.get("value")
+                if key:
+                    content[key] = value
             
             return {
                 "id": kb_id,
@@ -264,8 +279,11 @@ class LocalKnowledgeBase:
     def _classify_key_type(self, key: str) -> str:
         """根据键名分类条目类型"""
         key_lower = key.lower()
-        
-        if key_lower.startswith('item.'):
+        if 'tooltip' in key_lower:
+            return 'tooltip'
+        elif 'description' in key_lower or 'desc' in key_lower:
+            return 'description'
+        elif key_lower.startswith('item.'):
             return 'item'
         elif key_lower.startswith('block.'):
             return 'block'
@@ -281,10 +299,6 @@ class LocalKnowledgeBase:
             return 'advancement'
         elif key_lower.startswith('biome.'):
             return 'biome'
-        elif 'tooltip' in key_lower:
-            return 'tooltip'
-        elif 'description' in key_lower or 'desc' in key_lower:
-            return 'description'
         else:
             return 'other'
     

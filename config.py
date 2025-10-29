@@ -6,7 +6,7 @@ class Config:
     """应用配置类"""
     
     # OpenAI配置
-    OPENAI_API_KEY: str = os.getenv("OPENAI_API_KEY", "sk-emQwzHKtOCBdpQcHiISFu5zU6WbgIUQCczI0JuPjjPh60uzK")
+    OPENAI_API_KEY: str = os.getenv("OPENAI_API_KEY", "")
     OPENAI_API_BASE: str = os.getenv("OPENAI_API_BASE", "https://api.chatanywhere.tech")
     OPENAI_MODEL: str = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
     EMBEDDING_MODEL: str = os.getenv("EMBEDDING_MODEL", "text-embedding-3-small")

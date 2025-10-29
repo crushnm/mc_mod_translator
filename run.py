@@ -39,7 +39,7 @@ def main():
     # else:
     #     print("✅ Qdrant服务正常")
     
-    print(f"📱 访问 http://{Config.HOST}:{Config.PORT} 使用网页界面")
+    print(f"📱 访问 http://localhost:{Config.PORT} 使用网页界面")
     print(f"📚 API文档: http://{Config.HOST}:{Config.PORT}/docs")
     print(f"🔍 健康检查: http://{Config.HOST}:{Config.PORT}/health")
     print("🔧 按 Ctrl+C 停止服务")

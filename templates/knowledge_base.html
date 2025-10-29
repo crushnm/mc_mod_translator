@@ -153,6 +153,23 @@
             padding: 40px;
             color: #666;
         }
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 5px;
+        }
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            background: #e3f2fd;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        .checkbox-item input {
+            width: auto;
+            margin-right: 5px;
+        }
     </style>
 </head>
 <body>
@@ -175,6 +192,55 @@
             <div class="form-group">
                 <label for="kbDescription">描述（可选）</label>
                 <textarea id="kbDescription" placeholder="描述这个知识库的用途和内容..."></textarea>
+            </div>
+            <div class="form-group">
+                <label>选择要包含的类别</label>
+                <div class="checkbox-group" id="classesSelection">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="class-item" value="item" checked>
+                        <label for="class-item">物品 (item)</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="class-block" value="block" checked>
+                        <label for="class-block">方块 (block)</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="class-entity" value="entity" checked>
+                        <label for="class-entity">实体 (entity)</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="class-enchantment" value="enchantment" checked>
+                        <label for="class-enchantment">附魔 (enchantment)</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="class-potion" value="potion" checked>
+                        <label for="class-potion">药水 (potion)</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="class-gui" value="gui" checked>
+                        <label for="class-gui">界面 (gui)</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="class-advancement" value="advancement" checked>
+                        <label for="class-advancement">进度 (advancement)</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="class-biome" value="biome" checked>
+                        <label for="class-biome">生物群系 (biome)</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="class-tooltip" value="tooltip" checked>
+                        <label for="class-tooltip">工具提示 (tooltip)</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="class-description" value="description" checked>
+                        <label for="class-description">描述 (description)</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="class-other" value="other" checked>
+                        <label for="class-other">其他 (other)</label>
+                    </div>
+                </div>
             </div>
             <div class="form-group">
                 <label for="kbFile">上传汉化JSON文件</label>
@@ -213,11 +279,17 @@
             }
         }
 
+        function getSelectedClasses() {
+            const checkboxes = document.querySelectorAll('#classesSelection input[type="checkbox"]:checked');
+            return Array.from(checkboxes).map(cb => cb.value);
+        }
+
         async function createKnowledgeBase() {
             const name = document.getElementById('kbName').value.trim();
             const description = document.getElementById('kbDescription').value.trim();
             const fileInput = document.getElementById('kbFile');
             const file = fileInput.files[0];
+            const classes = getSelectedClasses();
 
             if (!name) {
                 showStatus('请输入知识库名称', 'error');
@@ -234,6 +306,11 @@
                 return;
             }
 
+            if (classes.length === 0) {
+                showStatus('请至少选择一个类别', 'error');
+                return;
+            }
+
             const createBtn = document.getElementById('createBtn');
             createBtn.disabled = true;
             createBtn.textContent = '创建中...';
@@ -242,6 +319,7 @@
             formData.append('name', name);
             formData.append('description', description);
             formData.append('file', file);
+            formData.append('classes', JSON.stringify(classes));
 
             try {
                 const response = await fetch('/api/knowledge-base', {
@@ -312,6 +390,7 @@
                             </div>
                         </div>
                         <div class="kb-actions">
+                            <button onclick="viewKnowledgeBase('${kb.id}')">查看详情</button>
                             <button onclick="deleteKnowledgeBase('${kb.id}')" class="danger">删除</button>
                         </div>
                     </div>
@@ -320,6 +399,11 @@
             `).join('');
 
             kbListDiv.innerHTML = html;
+        }
+
+        function viewKnowledgeBase(kbId) {
+            // 跳转到知识库详情页面
+            window.location.href = `/knowledge-base/${kbId}`;
         }
 
         async function deleteKnowledgeBase(kbId) {

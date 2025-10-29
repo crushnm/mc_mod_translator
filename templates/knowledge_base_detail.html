@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>知识库详情 - 我的世界模组翻译器</title>
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: #2c3e50;
+            margin: 0;
+        }
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+        .nav-links a {
+            color: #3498db;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            border: 1px solid #3498db;
+        }
+        .nav-links a:hover {
+            background-color: #3498db;
+            color: white;
+        }
+        .kb-info {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .kb-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .meta-item {
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            border-left: 4px solid #3498db;
+        }
+        .meta-label {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        .meta-value {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        .content-list {
+            margin-top: 20px;
+        }
+        .content-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 10px;
+        }
+        .content-key {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+            word-break: break-all;
+        }
+        .content-value {
+            color: #666;
+            word-break: break-all;
+        }
+        .search-box {
+            margin-bottom: 20px;
+        }
+        .search-box input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .status {
+            margin: 20px 0;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .loading {
+            background-color: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeaa7;
+        }
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 10px;
+        }
+        .pagination button {
+            padding: 8px 12px;
+        }
+        .pagination .active {
+            background-color: #3498db;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 知识库详情</h1>
+            <div class="nav-links">
+                <a href="/knowledge-base">🔙 返回知识库列表</a>
+                <a href="/">🏠 返回首页</a>
+            </div>
+        </div>
+
+        <div id="kbInfo" class="loading">正在加载知识库信息...</div>
+        
+        <div id="kbContent" style="display: none;">
+            <div class="kb-info">
+                <h2 id="kbTitle"></h2>
+                <div id="kbDescription"></div>
+                <div class="kb-meta">
+                    <div class="meta-item">
+                        <div class="meta-label">创建时间</div>
+                        <div id="kbCreatedAt" class="meta-value"></div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">条目数量</div>
+                        <div id="kbEntryCount" class="meta-value"></div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">知识库ID</div>
+                        <div id="kbId" class="meta-value"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="搜索键名..." onkeyup="filterContent()">
+            </div>
+            
+            <div class="content-list">
+                <h3>内容列表</h3>
+                <div id="contentList"></div>
+                <div class="pagination" id="pagination"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.pathname.split('/')[2]);
+        const kbId = window.location.pathname.split('/')[2];
+        let kbData = {};
+        let allContent = [];
+        let currentPage = 1;
+        const itemsPerPage = 20;
+
+        async function loadKnowledgeBase() {
+            try {
+                const response = await fetch(`/api/knowledge-base/${kbId}`);
+                if (response.ok) {
+                    kbData = await response.json();
+                    allContent = Object.entries(kbData.content || {});
+                    displayKnowledgeBase();
+                } else if (response.status === 404) {
+                    document.getElementById('kbInfo').className = 'error';
+                    document.getElementById('kbInfo').textContent = '知识库不存在';
+                } else {
+                    document.getElementById('kbInfo').className = 'error';
+                    document.getElementById('kbInfo').textContent = '加载失败';
+                }
+            } catch (error) {
+                document.getElementById('kbInfo').className = 'error';
+                document.getElementById('kbInfo').textContent = '网络错误: ' + error.message;
+            }
+        }
+
+        function displayKnowledgeBase() {
+            document.getElementById('kbInfo').style.display = 'none';
+            document.getElementById('kbContent').style.display = 'block';
+            
+            document.getElementById('kbTitle').textContent = kbData.name;
+            document.getElementById('kbId').textContent = kbData.id;
+            document.getElementById('kbCreatedAt').textContent = formatDate(kbData.created_at);
+            document.getElementById('kbEntryCount').textContent = allContent.length;
+            
+            if (kbData.description) {
+                document.getElementById('kbDescription').innerHTML = 
+                    `<div style="margin: 10px 0; color: #666;">${escapeHtml(kbData.description)}</div>`;
+            }
+            
+            renderContentList();
+        }
+
+        function renderContentList(page = 1) {
+            currentPage = page;
+            const startIndex = (page - 1) * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
+            const pageContent = allContent.slice(startIndex, endIndex);
+            
+            const contentListDiv = document.getElementById('contentList');
+            
+            if (pageContent.length === 0) {
+                contentListDiv.innerHTML = '<div style="text-align: center; padding: 40px; color: #666;">暂无内容</div>';
+                document.getElementById('pagination').innerHTML = '';
+                return;
+            }
+            
+            const html = pageContent.map(([key, value]) => `
+                <div class="content-item">
+                    <div class="content-key">${escapeHtml(key)}</div>
+                    <div class="content-value">${escapeHtml(value)}</div>
+                </div>
+            `).join('');
+            
+            contentListDiv.innerHTML = html;
+            renderPagination();
+        }
+
+        function renderPagination() {
+            const totalPages = Math.ceil(allContent.length / itemsPerPage);
+            if (totalPages <= 1) {
+                document.getElementById('pagination').innerHTML = '';
+                return;
+            }
+            
+            let paginationHtml = '';
+            for (let i = 1; i <= totalPages; i++) {
+                paginationHtml += `
+                    <button class="${i === currentPage ? 'active' : ''}" 
+                            onclick="renderContentList(${i})">
+                        ${i}
+                    </button>
+                `;
+            }
+            
+            document.getElementById('pagination').innerHTML = paginationHtml;
+        }
+
+        function filterContent() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            if (!searchTerm) {
+                allContent = Object.entries(kbData.content || {});
+            } else {
+                allContent = Object.entries(kbData.content || {}).filter(([key, value]) => 
+                    key.toLowerCase().includes(searchTerm) || 
+                    (typeof value === 'string' && value.toLowerCase().includes(searchTerm))
+                );
+            }
+            renderContentList(1);
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function formatDate(dateString) {
+            if (!dateString) return '未知';
+            const date = new Date(dateString);
+            return date.toLocaleString('zh-CN');
+        }
+
+        // 页面加载时获取知识库详情
+        document.addEventListener('DOMContentLoaded', loadKnowledgeBase);
+    </script>
+</body>
+</html>

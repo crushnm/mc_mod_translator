@@ -77,10 +77,12 @@ async def get_knowledge_bases():
 async def create_knowledge_base(
     name: str = Form(...),
     description: str = Form(""),
-    file: UploadFile = File(...)
+    file: UploadFile = File(...),
+    classes: Optional[str] = Form(None),
 ):
     """创建新的知识库"""
-    logger.info(f"开始创建知识库: {name}, 文件: {file.filename}")
+    classes = json.loads(classes)
+    logger.info(f"开始创建知识库: {name}, 文件: {file.filename},分类: {classes}")
     
     # 验证文件类型
     if not file.filename.endswith('.json'):
@@ -144,7 +146,7 @@ async def create_knowledge_base(
         
         # 创建知识库
         logger.info("开始创建向量知识库...")
-        kb_id = kb_manager.create_knowledge_base(name, description, json_data)
+        kb_id = kb_manager.create_knowledge_base(name, description, json_data,classes)
         logger.info(f"知识库创建成功，ID: {kb_id}")
         
         result = {
@@ -286,6 +288,30 @@ async def health_check():
             "error": str(e)
         }
 
+
+@app.get("/knowledge-base/{kb_id}")
+async def knowledge_base_detail_page(request: Request, kb_id: str):
+    """返回知识库详情页面"""
+    client_ip = request.client.host
+    logger.info(f"知识库详情页面访问 - IP: {client_ip}, KB ID: {kb_id}")
+    return templates.TemplateResponse("knowledge_base_detail.html", {"request": request})
+
+@app.get("/api/knowledge-base/{kb_id}")
+async def get_knowledge_base_detail(kb_id: str):
+    """获取指定知识库的详细内容"""
+    try:
+        kb_detail = kb_manager.get_knowledge_base(kb_id)
+        if not kb_detail:
+            raise HTTPException(status_code=404, detail="知识库不存在")
+        
+        logger.info(f"获取知识库详情成功: {kb_id}")
+        return kb_detail
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"获取知识库详情失败: {e}")
+        raise HTTPException(status_code=500, detail=f"获取知识库详情失败: {str(e)}")
+    
 @app.get("/api/knowledge-base/{kb_id}/search")
 async def search_knowledge_base(kb_id: str, query: str, top_k: int = 10):
     """搜索知识库接口"""
